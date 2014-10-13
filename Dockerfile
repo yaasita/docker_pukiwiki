@@ -33,4 +33,3 @@ RUN cd /var/www/ && unzip pukiwiki-1_5_0_utf8.zip
 COPY default /etc/apache2/sites-available/default
 COPY pukiwiki.ini.php /var/www/pukiwiki-1_5_0_utf8/pukiwiki.ini.php
 
-
