@@ -1,18 +1,12 @@
 <VirtualHost *:80>
 	ServerAdmin webmaster@localhost
 
-	DocumentRoot /var/www/rep2
+	DocumentRoot /var/www/pukiwiki-1_5_0_utf8/
 	<Directory />
 		Options FollowSymLinks
 		AllowOverride None
 	</Directory>
 	<Directory /var/www/>
-		Options Indexes FollowSymLinks MultiViews
-		AllowOverride None
-		Order allow,deny
-		allow from all
-	</Directory>
-	<Directory /var/www/rep2>
 		Options Indexes FollowSymLinks MultiViews ExecCGI
 		AllowOverride None
 		Order allow,deny

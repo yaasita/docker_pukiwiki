@@ -25,13 +25,12 @@ CMD ["/usr/bin/supervisord"]
 RUN apt-get install -y vim git htop w3m aptitude locales \
  apache2 php5 php-pear php-compat php5-gd php-http-request php-pager php-file php5-curl curl unzip
 
-# rep2
-RUN pear install Net_UserAgent_Mobile
-COPY rep2_v1_8_103.zip /var/www/
+# pukiwiki
 COPY localtime /etc/localtime
 COPY timezone /etc/timezone
+COPY pukiwiki-1_5_0_utf8.zip /var/www/
+RUN cd /var/www/ && unzip pukiwiki-1_5_0_utf8.zip
 COPY default /etc/apache2/sites-available/default
-RUN cd /var/www/ && unzip rep2_v1_8_103.zip
-COPY conf_admin.inc.php /var/www/rep2/conf/conf_admin.inc.php
-COPY conf_hostcheck.php /var/www/rep2/conf/conf_hostcheck.php
-RUN mkdir /var/www/rep2/data && chmod 777 /var/www/rep2/data/
+COPY pukiwiki.ini.php /var/www/pukiwiki-1_5_0_utf8/pukiwiki.ini.php
+
+
